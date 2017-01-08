@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import * as nunjucks from 'nunjucks'; 
 import * as fs from 'fs'; 
 import * as path from 'path'; 
