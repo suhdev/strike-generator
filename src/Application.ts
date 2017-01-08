@@ -4,6 +4,7 @@ import * as path from 'path';
 import {FileSystem} from './FileSystem';
 import * as yargs from 'yargs'; 
 import * as mkdirp from 'mkdirp'; 
+
 let log = console.log; 
 let fileSystem = new FileSystem();
 
@@ -14,7 +15,7 @@ interface AppConfig{
 }
 
 function createFromTemplate(templatePath:string,ctx:any,dest:string,name:string,fileName:string){
-    let file = fs.readFileSync(templatePath).toString(); 
+    let file = fs.readFileSync(path.resolve(__dirname,templatePath)).toString(); 
     let out = nunjucks.renderString(file,ctx);
 
     return fileSystem.createFolder(path.resolve(dest,'./'+name),ctx.cfg.force)
