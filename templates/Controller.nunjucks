@@ -1,0 +1,17 @@
+import * as React from 'react'; 
+import {ControllerView} from 'strike-v2'; 
+import {Reducer} from './Reducer'; 
+import { {{cfg.name}}Props, {{cfg.name}}State, {{cfg.name}}InitialState, StateKey } from './StateAndProps'; 
+import { {{cfg.name}}Actions } from './Actions'; 
+
+export class {{cfg.name}}Ctrl extends ControllerView<{{cfg.name}}Props,{{cfg.name}}State>{
+    constructor(props:{{cfg.name}}Props){
+        super(props,StateKey,{{cfg.name}}InitialState,Reducer); 
+    }
+
+    render(){
+        return (
+            <div id="{{cfg.name}}Ctrl"></div>
+        );
+    }
+}

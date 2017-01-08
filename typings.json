@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mkdirp": "registry:npm/mkdirp#0.5.0+20160723033700",
+    "nunjucks": "registry:dt/nunjucks#0.0.0+20160803221903",
+    "yargs": "registry:npm/yargs#5.0.0+20160907000723"
+  },
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20170106143713"
+  }
+}

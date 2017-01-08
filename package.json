@@ -1,0 +1,30 @@
+{
+  "name": "strike-generator",
+  "version": "1.0.0",
+  "description": "",
+  "bin":{
+    "strike":"./lib/Application"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suhdev/strike-generator.git"
+  },
+  "author": "Suhail Abood <suhail.abood@gmail.com> (http://www.suhailabood.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suhdev/strike-generator/issues"
+  },
+  "homepage": "https://github.com/suhdev/strike-generator#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "nunjucks": "^3.0.0",
+    "yargs": "^6.6.0"
+  },
+  "devDependencies": {
+    "typings": "^2.1.0"
+  }
+}

@@ -1,0 +1,9 @@
+import {StateKey as app} from './StateAndProps'; 
+
+export enum {{cfg.name}}ActionTypes{
+
+}
+
+export const {{cfg.name}}Actions = {
+
+}; 
