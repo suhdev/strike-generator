@@ -1,6 +1,6 @@
 {
   "name": "strike-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "bin":{
     "strike":"./lib/Application.js"

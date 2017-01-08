@@ -15,7 +15,7 @@ interface AppConfig{
 }
 
 function createFromTemplate(templatePath:string,ctx:any,dest:string,name:string,fileName:string){
-    let file = fs.readFileSync(path.resolve(__dirname,templatePath)).toString(); 
+    let file = fs.readFileSync(path.resolve(__dirname,'../templates/',templatePath)).toString(); 
     let out = nunjucks.renderString(file,ctx);
 
     return fileSystem.createFolder(path.resolve(dest,'./'+name),ctx.cfg.force)
@@ -25,20 +25,20 @@ function createFromTemplate(templatePath:string,ctx:any,dest:string,name:string,
 }
 
 function createController(cfg:AppConfig,dest:string){
-    return createFromTemplate('./templates/Controller.nunjucks',
+    return createFromTemplate('Controller.nunjucks',
         {cfg},dest,cfg.name,cfg.name+'Ctrl.tsx');
 }
 
 function createReducer(cfg:AppConfig,dest:string){
-    return createFromTemplate('./templates/Reducer.nunjucks',{cfg},dest,cfg.name,'Reducer.ts');
+    return createFromTemplate('Reducer.nunjucks',{cfg},dest,cfg.name,'Reducer.ts');
 }
 
 function createActions(cfg:AppConfig,dest:string){
-    return createFromTemplate('./templates/Actions.nunjucks',{cfg},dest,cfg.name,'Actions.ts');
+    return createFromTemplate('Actions.nunjucks',{cfg},dest,cfg.name,'Actions.ts');
 }
 
 function createStateAndProps(cfg:AppConfig,dest:string){
-    return createFromTemplate('./templates/StateAndProps.nunjucks',{cfg},dest,cfg.name,'StateAndProps.ts');
+    return createFromTemplate('StateAndProps.nunjucks',{cfg},dest,cfg.name,'StateAndProps.ts');
 }
 
 function create(cfg:AppConfig,dest:string){
