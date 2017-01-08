@@ -57,17 +57,31 @@ function create(cfg:AppConfig,dest:string){
         });
 }
 
+function createComponent(cfg:AppConfig,dest:string){
+    return createFromTemplate('Component',{cfg},dest,cfg.name,cfg.name+'.tsx');
+}
+
 if (!yargs.argv['dest']){
     console.log('Please provide a destination through the "dest" param'); 
     process.exit(); 
 }
 
 if (yargs.argv['name']){
-    create(
-        {
-            force:yargs.argv['force'] || false,
-            name:yargs.argv['name'],
-            key:yargs.argv['key'] || yargs.argv['name'].toLowerCase()
-        },
-    yargs.argv['dest']);
+    let cfg = {
+        force:yargs.argv['force'] || false,
+        name:yargs.argv['name'],
+        type:yargs.argv['type'], 
+        dest:yargs.argv['dest'],
+        key:yargs.argv['key'] || yargs.argv['name'].toLowerCase()
+    };
+    switch(cfg.type){
+        case 'controller':
+            create(cfg,cfg.dest);
+        break;
+        case 'component':
+            createComponent(cfg,cfg.dest); 
+        break;
+        default:
+        log(Templates.Help);
+    }
 }

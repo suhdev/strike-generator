@@ -1,6 +1,6 @@
 {
   "name": "strike-generator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A library to generate controllers for StrikeJS-powered apps.",
   "bin":{
     "strike":"./lib/Application.js"
