@@ -75,12 +75,16 @@ if (yargs.argv['name']){
         key:yargs.argv['key'] || yargs.argv['name'].toLowerCase()
     };
     switch(cfg.type){
+        case 'ctrl':
         case 'controller':
             create(cfg,cfg.dest);
         break;
+        case 'c':
         case 'component':
             createComponent(cfg,cfg.dest); 
         break;
+        case 'h':
+        case 'help':
         default:
         log(Templates.Help);
     }
